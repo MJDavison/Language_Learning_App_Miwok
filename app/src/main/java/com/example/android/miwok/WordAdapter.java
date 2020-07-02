@@ -33,8 +33,10 @@ public class WordAdapter extends ArrayAdapter<Word> {
         TextView tvDefaultWord = listItemView.findViewById(R.id.default_text_view);
         TextView tvTranslatedWord = listItemView.findViewById(R.id.translated_text_view);
 
-        tvDefaultWord.setText(currentWord.getWordDefault());
-        tvTranslatedWord.setText(currentWord.getWordTranslated());
+        if (currentWord != null) {
+            tvDefaultWord.setText(currentWord.getWordDefault());
+            tvTranslatedWord.setText(currentWord.getWordTranslated());
+        }
         return listItemView;
     }
 }
