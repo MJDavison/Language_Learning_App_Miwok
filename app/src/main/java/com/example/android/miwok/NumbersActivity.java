@@ -45,7 +45,7 @@ public class NumbersActivity extends AppCompatActivity {
         */
 
         //Create an ArrayList of words
-        ArrayList<String> words = new ArrayList<String>();
+        ArrayList<String> words = new ArrayList<>();
 
         words.add("one");
         words.add("two");
@@ -62,7 +62,7 @@ public class NumbersActivity extends AppCompatActivity {
 
         int index = 0;
 
-        TextView wordView = new TextView(this);
+        /*TextView wordView = new TextView(this);
         wordView.setText(words.get(index));
         rootView.addView(wordView);
 
@@ -76,7 +76,15 @@ public class NumbersActivity extends AppCompatActivity {
 
         TextView wordView3 = new TextView(this);
         wordView3.setText(words.get(index));
-        rootView.addView(wordView3);
+        rootView.addView(wordView3);*/
+
+        while (index < 10) {
+            TextView wordView = new TextView(this);
+            wordView.setText(words.get(index));
+            rootView.addView(wordView);
+
+            index++;
+        }
     }
 }
 
