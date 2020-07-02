@@ -1,7 +1,8 @@
 package com.example.android.miwok;
 
 import android.os.Bundle;
-import android.util.Log;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -57,16 +58,25 @@ public class NumbersActivity extends AppCompatActivity {
         words.add("nine");
         words.add("ten");
 
-        Log.v(LOG_TAG, "Word at index 0: " + words.get(0));
-        Log.v(LOG_TAG, "Word at index 1: " + words.get(1));
-        Log.v(LOG_TAG, "Word at index 2: " + words.get(2));
-        Log.v(LOG_TAG, "Word at index 3: " + words.get(3));
-        Log.v(LOG_TAG, "Word at index 4: " + words.get(4));
-        Log.v(LOG_TAG, "Word at index 5: " + words.get(5));
-        Log.v(LOG_TAG, "Word at index 6: " + words.get(6));
-        Log.v(LOG_TAG, "Word at index 7: " + words.get(7));
-        Log.v(LOG_TAG, "Word at index 8: " + words.get(8));
-        Log.v(LOG_TAG, "Word at index 9: " + words.get(9));
+        LinearLayout rootView = findViewById(R.id.rootView);
+
+        int index = 0;
+
+        TextView wordView = new TextView(this);
+        wordView.setText(words.get(index));
+        rootView.addView(wordView);
+
+        index += 1;
+
+        TextView wordView2 = new TextView(this);
+        wordView2.setText(words.get(index));
+        rootView.addView(wordView2);
+
+        index += 1;
+
+        TextView wordView3 = new TextView(this);
+        wordView3.setText(words.get(index));
+        rootView.addView(wordView3);
     }
 }
 
