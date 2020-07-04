@@ -1,22 +1,34 @@
 package com.example.android.miwok;
 
 public class Word {
-    private String wordsDefault;
+    private String mDefaultWord;
 
-    private String wordsTranslated;
+    private String mTranslatedWord;
+
+    private int mImageID;
 
     Word(String defaultWord, String translatedWord) {
-        wordsDefault = defaultWord;
-        wordsTranslated = translatedWord;
+        this.mDefaultWord = defaultWord;
+        this.mTranslatedWord = translatedWord;
+
+    }
+
+    Word(String defaultWord, String translatedWord, int imageID) {
+        this.mDefaultWord = defaultWord;
+        this.mTranslatedWord = translatedWord;
+        this.mImageID = imageID;
     }
 
     public String getWordDefault() {
-        return wordsDefault;
+        return mDefaultWord;
     }
 
     public String getWordTranslated() {
-        return wordsTranslated;
+        return mTranslatedWord;
     }
 
+    public int getImageID() {
+        return mImageID;
+    }
 
 }
