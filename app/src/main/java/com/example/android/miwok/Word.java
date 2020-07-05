@@ -1,5 +1,6 @@
 package com.example.android.miwok;
 
+
 public class Word {
     private String mDefaultWord;
 
@@ -47,6 +48,16 @@ public class Word {
     public Word(String mDefaultWord, String mTranslatedWord) {
         this.mDefaultWord = mDefaultWord;
         this.mTranslatedWord = mTranslatedWord;
+    }
+
+    @Override
+    public String toString() {
+        return "Word{" +
+                "mDefaultWord='" + mDefaultWord + '\'' +
+                ", mTranslatedWord='" + mTranslatedWord + '\'' +
+                ", mImageID=" + mImageID +
+                ", mAudioID=" + mAudioID +
+                '}';
     }
 
     /**
