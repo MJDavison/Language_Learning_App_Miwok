@@ -1,13 +1,22 @@
 package com.example.android.miwok;
 
+import android.content.Context;
+
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 public class SimpleFragmentPagerAdapter extends FragmentPagerAdapter {
-    public SimpleFragmentPagerAdapter(@NonNull FragmentManager fm) {
+    final int PAGE_COUNT = 4;
+
+    private String[] tabTitles = new String[]{"Numbers", "Family", "Colors", "Phrases"};
+    private Context context;
+
+    public SimpleFragmentPagerAdapter(@NonNull FragmentManager fm, Context context) {
         super(fm);
+        this.context = context;
     }
 
     @NonNull
@@ -29,6 +38,12 @@ public class SimpleFragmentPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return 4;
+        return PAGE_COUNT;
+    }
+
+    @Nullable
+    @Override
+    public CharSequence getPageTitle(int position) {
+        return tabTitles[position].toUpperCase();
     }
 }

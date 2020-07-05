@@ -22,8 +22,7 @@ import java.util.ArrayList;
  * create an instance of this fragment.
  */
 public class NumbersFragment extends Fragment {
-
-    private static final String LOG_TAG = NumbersActivity.class.getSimpleName();
+    private static final String LOG_TAG = NumbersFragment.class.getSimpleName();
     AudioManager mAudioManager;
     private MediaPlayer mMediaPlayer;
     AudioManager.OnAudioFocusChangeListener mOnAudioFocusChangeListener = new AudioManager.OnAudioFocusChangeListener() {

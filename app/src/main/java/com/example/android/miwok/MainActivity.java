@@ -21,6 +21,8 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import com.google.android.material.tabs.TabLayout;
+
 public class MainActivity extends AppCompatActivity {
     // Create variables to hold the TextView Buttons
     TextView numbersButton, familyButton, colorsButton, phrasesButton;
@@ -36,10 +38,15 @@ public class MainActivity extends AppCompatActivity {
         ViewPager viewPager = findViewById(R.id.viewpager);
 
         //Create a {@Link SimpleFragmentPagerAdapter} SimpleFragmentPagerAdapter
-        SimpleFragmentPagerAdapter adapter = new SimpleFragmentPagerAdapter(getSupportFragmentManager());
+        SimpleFragmentPagerAdapter adapter = new SimpleFragmentPagerAdapter(getSupportFragmentManager(), MainActivity.this);
 
         //Set the adapter onto the view pager
         viewPager.setAdapter(adapter);
+
+        TabLayout tabLayout = findViewById(R.id.sliding_tabs);
+        tabLayout.setupWithViewPager(viewPager);
+
+
         /*//Create Listeners
         NumbersClickListener clickListener = new NumbersClickListener();
 
