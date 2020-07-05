@@ -11,12 +11,13 @@ import androidx.fragment.app.FragmentPagerAdapter;
 public class SimpleFragmentPagerAdapter extends FragmentPagerAdapter {
     final int PAGE_COUNT = 4;
 
-    private String[] tabTitles = new String[]{"Numbers", "Family", "Colors", "Phrases"};
-    private Context context;
+
+    private Context mContext;
+    private String[] tabTitles = new String[4];
 
     public SimpleFragmentPagerAdapter(@NonNull FragmentManager fm, Context context) {
         super(fm);
-        this.context = context;
+        this.mContext = context;
     }
 
     @NonNull
@@ -44,6 +45,10 @@ public class SimpleFragmentPagerAdapter extends FragmentPagerAdapter {
     @Nullable
     @Override
     public CharSequence getPageTitle(int position) {
+        tabTitles[0] = mContext.getString(R.string.category_numbers);
+        tabTitles[1] = mContext.getString(R.string.category_family);
+        tabTitles[2] = mContext.getString(R.string.category_colors);
+        tabTitles[3] = mContext.getString(R.string.category_phrases);
         return tabTitles[position].toUpperCase();
     }
 }
