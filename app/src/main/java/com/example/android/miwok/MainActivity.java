@@ -15,12 +15,11 @@
  */
 package com.example.android.miwok;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
 
 public class MainActivity extends AppCompatActivity {
     // Create variables to hold the TextView Buttons
@@ -32,7 +31,16 @@ public class MainActivity extends AppCompatActivity {
 
         // Set the content of the activity to use the activity_main.xml layout file
         setContentView(R.layout.activity_main);
-        //Create Listeners
+
+        //Create a {@Link ViewPager} ViewPager
+        ViewPager viewPager = findViewById(R.id.viewpager);
+
+        //Create a {@Link SimpleFragmentPagerAdapter} SimpleFragmentPagerAdapter
+        SimpleFragmentPagerAdapter adapter = new SimpleFragmentPagerAdapter(getSupportFragmentManager());
+
+        //Set the adapter onto the view pager
+        viewPager.setAdapter(adapter);
+        /*//Create Listeners
         NumbersClickListener clickListener = new NumbersClickListener();
 
         //Find TextView Buttons in Layout
@@ -73,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent phrasesIntent = new Intent(MainActivity.this, PhrasesActivity.class);
                 startActivity(phrasesIntent);
             }
-        });
+        });*/
     }
+
 }
